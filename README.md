@@ -82,8 +82,10 @@ code - 200
 	cd {PASTA_DO_PROJETO}\CodMorse\appfront;
 	npm install;
 	```
-
-  
+- Agora entre inicie o serviço com o seguinte comando:
+	```
+	npm start;
+	```  
   
   
 
@@ -102,3 +104,8 @@ location /api {
 	add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
 	proxy_pass http://{SEU_IP}:8000/api;
 }
+```
+
+
+## Acesssando localmente
+Após o comando npm para iniciar o react, será aberto uma aba no localhost na porta **3000** automaticamente. Feche essa aba e acesse o sistema através do http://localhost *sem a porta*.  
