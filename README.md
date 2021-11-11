@@ -37,3 +37,44 @@ Para subir o serviço localmente, siga os seguintes passos. Certifique-se de alt
 cd {PASTA_DO_PROJETO}\CodMorse\appserver
 python manage.py runserver
 ```
+Requisição para conversão através da API
+```
+curl --location --request GET 'http://localhost:8000/api/morse' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "codMorseParam": "...."
+}'
+
+Response
+code - 200
+{
+    "data": "H"
+}
+```
+
+
+# Frontend
+A aplicação frontend foi desenvolvida em Javascript, com Framework React
+## Dependências
+[Node]
+
+```
+cd {PASTA_DO_PROJETO}\CodMorse\appfront;
+npm install;
+```
+
+
+
+# NGINX
+Para evitar problemas de CORS, adicione a configuração a seguir ao serviço Nginx na sua máquina:
+```
+location / {
+    proxy_pass http://{SEU_IP}:3000/;
+}
+
+location /api {
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    proxy_pass http://{SEU_IP}:8000/api;
+}
+```

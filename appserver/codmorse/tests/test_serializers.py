@@ -9,7 +9,7 @@ class SerializerTestCase(TestCase):
         seriali = CodMorseSerializer(data={"codMorseParam": ".-"})
         self.assertEqual(seriali.is_valid(), True)
 
-    def test_convert_morse_to_text_test(self):
+    def test_convert_morse_to_text(self):
         """Conversão de código morse para texto"""
         
         self.assertEqual(CodMorseSerializer.convert_morse_to_text({"codMorseParam": ".-"}), 'A')
