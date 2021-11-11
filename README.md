@@ -47,7 +47,7 @@ Para subir o serviço localmente, use os comandos abaixo. Certifique-se de alter
 
 ```
 cd {PASTA_DO_PROJETO}\CodMorse\appserver
-python manage.py runserver {SEU_IP}:8000
+python manage.py runserver {SEU_IP_REDE_LOCAL}:8000
 ```
 
 Requisição para conversão através da API
@@ -96,13 +96,13 @@ Para evitar problemas de CORS, adicione as configuração a seguir ao arquivo .c
 ```
 // nginx.conf ou *.conf
 location / {
-	proxy_pass http://{SEU_IP}:3000/;
+	proxy_pass http://{SEU_IP_REDE_LOCAL}:3000/;
 }
 
 location /api {
 	add_header 'Access-Control-Allow-Origin' '*';
 	add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
-	proxy_pass http://{SEU_IP}:8000/api;
+	proxy_pass http://{SEU_IP_REDE_LOCAL}:8000/api;
 }
 ```
 
