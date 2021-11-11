@@ -82,7 +82,7 @@ code - 200
 	cd {PASTA_DO_PROJETO}\CodMorse\appfront;
 	npm install;
 	```
-- Agora entre inicie o serviço com o seguinte comando:
+- Inicie o serviço com o seguinte comando:
 	```
 	npm start;
 	```  
@@ -91,7 +91,7 @@ code - 200
 
 # NGINX
 
-Para evitar problemas de CORS, adicione as configuração a seguir ao serviço Nginx:
+Para evitar problemas de CORS, adicione as configuração a seguir ao arquivo .conf do serviço Nginx:
 
 ```
 // nginx.conf ou *.conf
@@ -108,4 +108,4 @@ location /api {
 
 
 ## Acesssando localmente
-Após o comando npm para iniciar o react, será aberto uma aba no localhost na porta **3000** automaticamente. Feche essa aba e acesse o sistema através do http://localhost *sem a porta*.  
+Após o comando npm para iniciar o react, será aberto uma aba no localhost na porta **3000** automaticamente. Feche essa aba e acesse o sistema através do http://localhost *sem a porta*.  O Nginx deverá realizar o proxy para o serviço Node e API em Python das requisições.
