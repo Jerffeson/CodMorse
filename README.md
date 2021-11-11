@@ -35,7 +35,7 @@ Para subir o serviço localmente, siga os seguintes passos. Certifique-se de alt
 
 ```
 cd {PASTA_DO_PROJETO}\CodMorse\appserver
-python manage.py runserver
+python manage.py runserver {SEU_IP}:8000
 ```
 Requisição para conversão através da API
 ```

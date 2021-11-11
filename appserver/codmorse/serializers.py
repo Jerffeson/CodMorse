@@ -3,7 +3,7 @@ from rest_framework import serializers
 class CodMorseSerializer(serializers.Serializer):
     codMorseParam = serializers.CharField(max_length=5)
 
-    def convert_morse_to_text(attrs):
+    def convert_morse_to_text(cod_morse):
          return {
              ".-"   :  "A",
              "-..." :  "B",
@@ -42,5 +42,5 @@ class CodMorseSerializer(serializers.Serializer):
              "----.":  "9",
              "-----":  "0",
 
-         }.get(attrs['codMorseParam'], None)
+         }.get(cod_morse, None)
         

@@ -29,11 +29,10 @@ const MorseToText = (props) => {
                         responseType: "json"
                       });
                       
-                    await api.get('/api/morse', param)
+                    await api.get('/api/morse', {params: param})
                     .then(function (response) {
                         setText(text+response.data.data);                                                 
-                    });                                             
-                                        
+                    });              
                 }}
                 >
                 {({ isSubmitting }) => (
