@@ -52,7 +52,7 @@ const MorseToText = (props) => {
                 {({ isSubmitting }) => (
                     <Form className="form-padrao">
                         <label htmlFor="cod_morse">Código Morse:</label>
-                        <Field type="text" name="cod_morse" placeholder=". ou -" required maxLength='5'/>
+                        <Field type="text" name="cod_morse" placeholder=". -" required maxLength='5'/>
                         <ErrorMessage name="cod_morse" component="div" className="error-message"/>
      
                         <div className="submit-box">                            
